@@ -1,3 +1,12 @@
+# pre requiremnt 
+    - git client installed 
+    - ssh client available
+    - public SSH key created
+    - terraform installed
+
+# usefull tools installed 
+    - AWS cli tools 
+
 1. clone repository
 git clone git@github.com:kpat71/aws-policy-workshop.git
 
