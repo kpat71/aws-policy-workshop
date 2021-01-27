@@ -7,9 +7,13 @@ variable "associate_public_ip_address" {
   default = false
 }
 
+variable "vpc_id" {
+  description = "VPD ID"
+}
+
 variable "subnet" {
   description = "Subnets which allow public access"
-  default = []
+  #default = []
 }
 
 variable "public_ssh_key" {
@@ -25,3 +29,18 @@ variable "region" {
   description = "VPC Region"
   type        = string
 }
+
+variable "environment" {
+  description = "Environment type"
+}
+
+variable "ami_id" {
+  description = "AMI id number"
+  default = "ami-03c3a7e4263fd998c"
+}
+
+variable "instance_type" {
+  description = "AMI id number"
+  default = "t3.nano"
+}
+
