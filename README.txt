@@ -25,7 +25,6 @@ git clone git@github.com:kpat71/aws-policy-workshop.git
 
 6. SSH to instance 
     ssh ec2-user@INSTANCE_IP
-check metadata https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-data-retrieval.html
     curl -s http://169.254.169.254/latest/meta-data/identity-credentials/ec2/info
 
 From instance test s3 access
@@ -51,5 +50,7 @@ Delete installation:
     terraform destroy
 
 Links:
+https://docs.aws.amazon.com/AmazonS3/latest/dev/list_amazons3.html
 https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_examples.html
 https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_examples_iam-assume-tagged-role.html
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-data-retrieval.html
