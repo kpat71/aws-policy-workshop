@@ -55,9 +55,23 @@ resource "aws_iam_policy" "policy" {
 }
 EOF
 }
+#/*
 # attach policy to role
 resource "aws_iam_policy_attachment" "s3_policy" {
-  name       = "test-attachment"
+  name       = "${var.tester_name}-${random_id.id.hex}-policy"
   roles      = [aws_iam_role.role.name]
   policy_arn = aws_iam_policy.policy.arn
 }
+#*/
+
+/*
+# AWS managed policy
+data "aws_iam_policy" "read_only_access" {
+  arn = "arn:aws:iam::aws:policy/ReadOnlyAccess"
+}
+
+resource "aws_iam_role_policy_attachment" "aws_managed_s3_ro" {
+  role       = aws_iam_role.role.name
+  policy_arn = data.aws_iam_policy.read_only_access.arn
+}
+*/

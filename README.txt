@@ -34,9 +34,10 @@ aws s3 ls s3://BUCKET_ID
 7. Test S3 policy changes
     Edit S3 permissions so that you can read only bucket content
     Edit policy so that you can read only dir1 content
-    Add permissions so that you can raed from dir1 and do all actions to dir2
-    Test to upload files to dir1 and dir to verify that rule is working
-    change permission so that there is condission to read bucket that are tagged to var.tester_name
+    Add permissions so that you can read from dir1 and do all actions to dir2
+        Test to upload files to dir1 and dir2 to verify that rule is working
+    Test to add AWS managed policy to Role and comment own policy (commented in role_and_policy.tf)
+    Change permission so that there is condission to read bucket that are tagged to var.tester_name
 
 8. Test Parameter store policy changes
     Add permission to read app1 perameters from parameter store
@@ -45,7 +46,7 @@ aws s3 ls s3://BUCKET_ID
 
 Delete installation:
 1. remove all files from s3 bucket
-    aws s3 rm --recursive s3://BUCKET_ID/
+    aws s3 rm --recursive s3://BUCKET_ID/*.txt
 2. Run terraform to destroy resources
     terraform destroy
 
