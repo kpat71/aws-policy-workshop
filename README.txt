@@ -46,7 +46,7 @@ aws s3 ls s3://BUCKET_ID
 
 Delete installation:
 1. remove all files from s3 bucket
-    aws s3 rm --recursive s3://BUCKET_ID/*.txt
+    aws s3 rm --recursive s3://BUCKET_ID
 2. Run terraform to destroy resources
     terraform destroy
 

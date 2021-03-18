@@ -44,12 +44,6 @@ resource "aws_iam_policy" "policy" {
             "Effect": "Allow",
             "Action": ["s3:ListBucket"],
             "Resource": ["${module.aws_s3_bucket.this_s3_bucket_arn}"]
-        },
-        {
-            "Sid": "AllObjectActions",
-            "Effect": "Allow",
-            "Action": "s3:*Object",
-            "Resource": ["${module.aws_s3_bucket.this_s3_bucket_arn}/*"]
         }
     ]
 }
